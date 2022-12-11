@@ -1,0 +1,99 @@
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Calculator Activity</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Combo&family=Monoton&family=Nerko+One&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Caveat:wght@700&family=Combo&family=Monoton&family=Nerko+One&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Caveat:wght@700&family=Combo&family=Laila:wght@600&family=Monoton&family=Nerko+One&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<style>
+    body {
+      background-color: rgb(54, 51, 51);
+    }
+</style>
+
+<body>
+
+<div class="container">
+  <h2 class="header">RAD</h2>
+
+<form action="" class="form">
+    <input class="output" type="text" id="result" disabled/>
+</form>
+<div class="box"> 
+  <button value="C" onclick="clearScreen()" id="btn1" />C</button>  
+  <button value="DEL" onclick="del()" id="btn3" />DEL</button>
+
+<div class="box1">
+<button value="1" onclick="display('1')">1</button>
+<button value="2" onclick="display('2')">2</button>
+<button value="3" onclick="display('3')">3</button>
+<button value="/" onclick="display('/')">/</button>
+<button value="4" onclick="display('4')">4</button>
+<button value="5" onclick="display('5')">5</button>
+<button value="6" onclick="display('6')">6</button>
+<button value="-" onclick="display('-')">-</button>
+<button value="7" onclick="display('7')">7</button>
+<button value="8" onclick="display('8')">8</button>
+<button value="9" onclick="display('9')">9</button>
+<button value="+" onclick="display('+')">+</button>
+<button value="0" onclick="display('0')">0</button>
+<button value="." onclick="display('.')">.</button>
+<button value="00" onclick="display('00')">00</button>
+<button value="*" onclick="display('*')">*</button>
+<button value="=" onclick="Calculate()"class="equal">=</button>
+
+</div>
+</div>
+</div>
+
+
+<script>
+
+let outputScreen = document.getElementById("result")
+
+function display(num){
+  outputScreen.value += num
+}
+
+function Calculate(){
+  try{
+  outputScreen.value = eval(outputScreen.value);
+}
+
+catch (err){
+  alert("Invalid")
+}
+
+}
+function clearScreen(){
+  outputScreen.value = "";
+}
+
+function del(){
+  outputScreen.value = outputScreen.value
+  .slice(0,-1)
+}
+
+
+</script> 
+
+
+</body>
+</html>
+
+
+
